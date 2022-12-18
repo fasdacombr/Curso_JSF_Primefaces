@@ -5,10 +5,12 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="AlgaworksPU">
 		<properties>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cursojsfprimefaces?useSSL=false" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/cursojsfprimefaces?serverTimezone=UTC&amp;useSSL=false" />
 			<property name="javax.persistence.jdbc.user" value="root" />
-			<property name="javax.persistence.jdbc.password" value="teste" />
+			<property name="javax.persistence.jdbc.password" value="brcd2605" />
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+			
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			
 			<!-- ATENÇÃO!!! As 03(três) linhas abaixo não devem serem colocadas em produção, ou seja, devem serem EXCLUIDAS. -->
 			<property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
