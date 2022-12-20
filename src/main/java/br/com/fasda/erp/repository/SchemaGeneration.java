@@ -11,7 +11,7 @@ import br.com.fasda.erp.model.Empresa;
 public class SchemaGeneration {
 	
 	public static void main(String[] args) {
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("AlgaworksPU");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("AlgaWorksPU");
 		
 		EntityManager em = emf.createEntityManager();
 		
