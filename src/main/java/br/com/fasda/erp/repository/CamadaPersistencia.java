@@ -14,7 +14,7 @@ import br.com.fasda.erp.model.TipoEmpresa;
 public class CamadaPersistencia {
 	
 	public static void main(String[] args) {		
-		EntityManagerFactory emf = Persistence.createEntityManagerFactory("AlgaWorksPU");
+		EntityManagerFactory emf = Persistence.createEntityManagerFactory("AlgaworksPU");
 		
 		EntityManager em = emf.createEntityManager();
 		
