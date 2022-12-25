@@ -3,13 +3,16 @@ package br.com.fasda.erp.controller;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.faces.convert.Converter;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.fasda.erp.model.Empresa;
+import br.com.fasda.erp.model.RamoAtividade;
 import br.com.fasda.erp.model.TipoEmpresa;
 import br.com.fasda.erp.repository.Empresas;
+import br.com.fasda.erp.repository.RamoAtividades;
 import br.com.fasda.erp.util.FacesMessages;
 
 @Named
@@ -24,9 +27,14 @@ public class GestaoEmpresasBean implements Serializable {
 	@Inject
 	private FacesMessages messages;
 	
+	@Inject
+	private RamoAtividades ramoAtividades;
+	
 	private List<Empresa> listaEmpresas;
 	
 	private String termoPesquisa;
+	
+	private Converter ramoAtividadeConverter;
 	
 	public void pesquisar() {
 		listaEmpresas = empresas.pesquisar(termoPesquisa);	
@@ -38,6 +46,14 @@ public class GestaoEmpresasBean implements Serializable {
 	
 	public void todasEmpresas() {
 		listaEmpresas = empresas.todas();		
+	}
+	
+	public List<RamoAtividade> CompletarRamoAtividade(String termo) {
+		List<RamoAtividade> listaRamoAtividades = ramoAtividades.pesquisar(termo);
+		
+		ramoAtividadeConverter = new RamoAtividadeConverter(listaRamoAtividades);
+		
+		return listaRamoAtividades;
 	}
 	
 	public List<Empresa> getListaEmpresas() {
@@ -54,5 +70,9 @@ public class GestaoEmpresasBean implements Serializable {
 	
 	public TipoEmpresa[] getTiposEmpresa() {
 		return TipoEmpresa.values();
+	}
+	
+	public Converter getRamoAtividadeConverter() {
+		return ramoAtividadeConverter;
 	}
 }
