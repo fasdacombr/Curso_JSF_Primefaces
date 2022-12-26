@@ -21,6 +21,7 @@
 
 			<!-- ATENÇÃO!!! As 03(três) linhas abaixo não devem serem colocadas em 
 				produção, ou seja, devem serem EXCLUIDAS. -->
+			<!--
 			<property
 				name="javax.persistence.schema-generation.database.action"
 				value="drop-and-create" />
@@ -29,7 +30,8 @@
 				value="metadata" />
 			<property name="javax.persistence.sql-load-script-source"
 				value="META-INF/sql/dados-iniciais.sql" />
-
+			-->
+			
 			<!-- A linha abaixo mostra o resultado no console -->
 			<property name="hibernate.show_sql" value="true" />
 			<!-- Essa outra formata para que seja mais legivel... -->

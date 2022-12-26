@@ -8,6 +8,8 @@
 		<locale-config>
 			<default-locale>pt_BR</default-locale>
 		</locale-config>
+		
+		<message-bundle>br.com.fasda.erp.Messages</message-bundle>
 	</application>
 
 </faces-config>
